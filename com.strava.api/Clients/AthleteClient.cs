@@ -208,7 +208,7 @@ namespace com.strava.api.Clients
         /// <returns>A list of the friends of the currently authenticated athlete.</returns>
         public List<AthleteSummary> GetFriends()
         {
-            String getUrl = String.Format("{0}?access_token={1}", Endpoints.Athletes, Authentication.AccessToken);
+            String getUrl = String.Format("{0}/friends?access_token={1}", Endpoints.Athlete, Authentication.AccessToken);
             String json = WebRequest.SendGet(new Uri(getUrl));
             return Unmarshaller<List<AthleteSummary>>.Unmarshal(json);
         }
